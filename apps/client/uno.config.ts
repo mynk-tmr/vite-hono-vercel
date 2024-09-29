@@ -2,7 +2,6 @@ import {
 	defineConfig,
 	presetIcons,
 	presetUno,
-	presetWebFonts,
 	transformerDirectives,
 } from "unocss";
 
@@ -14,15 +13,14 @@ export default defineConfig({
 				display: "inline-block",
 			},
 		}),
-		presetWebFonts({
-			provider: "google",
-			fonts: {
-				sans: {
-					name: "Inter",
-					weights: [400, 500, 700],
-				},
-			},
-		}),
 	],
 	transformers: [transformerDirectives()],
+	content: {
+		pipeline: {
+			include: [
+				/(.*\/)primereact(.*)\.(c|m)?(js)(x?)$/, // PrimeReact
+				/\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/, // Default
+			],
+		},
+	},
 });
