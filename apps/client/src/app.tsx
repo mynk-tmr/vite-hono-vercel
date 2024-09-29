@@ -1,11 +1,11 @@
-import './index.css'
-import {type HonoApp} from 'server'
-import {hc} from 'hono/client'
-
-const {api} = hc<HonoApp>(import.meta.env.PROD? import.meta.env.BASE_URL : 'http://localhost:3000')
-
-api.$get('/').then(x => x.text()).then(console.log)
+import "@unocss/reset/tailwind.css";
+import "virtual:uno.css";
+import "./index.css";
 
 export const App = () => {
-  return <h1>Open console !</h1>
-}
+	return (
+		<h1 className="text-indigo-700 text-2xl">
+			UnoCss hack <i className="i-tabler-phone" />{" "}
+		</h1>
+	);
+};
