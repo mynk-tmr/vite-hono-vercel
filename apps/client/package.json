@@ -1,24 +1,25 @@
 {
-  "name": "client",
-  "type": "module",
-  "scripts": {
-    "dev": "vite --port 4000",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@hono/client": "^0.0.3",
-    "@iconify-json/tabler": "^1.2.4",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@unocss/preset-icons": "^0.63.1",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "typescript": "^5.5.3",
-    "unocss": "^0.63.1",
-    "vite": "^5.4.1"
-  }
+	"name": "client",
+	"type": "module",
+	"scripts": {
+		"dev": "vite --port 4000",
+		"build": "tsc -b && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@tanstack/react-router": "^1.58.16",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	},
+	"devDependencies": {
+		"@hono/client": "^0.0.3",
+		"@iconify-json/tabler": "^1.2.4",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@unocss/preset-icons": "^0.63.1",
+		"@vitejs/plugin-react-swc": "^3.5.0",
+		"typescript": "^5.5.3",
+		"unocss": "^0.63.1",
+		"vite": "^5.4.1"
+	}
 }

@@ -4,25 +4,19 @@ import {
 	presetUno,
 	presetWebFonts,
 	transformerDirectives,
+	transformerVariantGroup,
 } from "unocss";
 
 export default defineConfig({
 	presets: [
 		presetUno(),
-		presetIcons({
-			extraProperties: {
-				display: "inline-block",
-			},
-		}),
+		presetIcons(),
 		presetWebFonts({
 			provider: "google",
 			fonts: {
-				sans: {
-					name: "Inter",
-					weights: [400, 500, 700],
-				},
+				sans: "Sarabun",
 			},
 		}),
 	],
-	transformers: [transformerDirectives()],
+	transformers: [transformerDirectives(), transformerVariantGroup()],
 });

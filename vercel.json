@@ -1,13 +1,13 @@
 {
-  "framework": "vite",
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/((?!api/.*).*)",
-      "destination": "/index.html"
-    }
-  ]
+	"framework": "vite",
+	"rewrites": [
+		{
+			"source": "/api/(.*)",
+			"destination": "/api/index.js"
+		},
+		{
+			"source": "/((?!api/.*).*)",
+			"destination": "/index.html"
+		}
+	]
 }

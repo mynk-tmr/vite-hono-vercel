@@ -1,3 +1,22 @@
-body {
-	@apply font-sans;
+@layer base {
+	#app {
+		@apply min-h-screen fixed inset-0 p-4 isolate !font-sans bg-[var(--alpha)] text-[var(--beta)];
+
+		--alpha: #fbfbff;
+		--beta: #040f16;
+		--danger: #b80c09;
+		--info: #01baef;
+		--attention: #f1d302;
+		--success: #49d49d;
+		--azure: #3b82f6;
+	}
+}
+
+@layer primereact {
+	.p-component {
+		@apply !font-sans;
+	}
+	i[class^="i-"] {
+		@apply mr-1 inline-block;
+	}
 }
