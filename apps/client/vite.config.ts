@@ -1,7 +1,7 @@
-import { defineConfig } from "vite";
-import UnoCSS from "unocss/vite";
-import react from "@vitejs/plugin-react-swc";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import react from "@vitejs/plugin-react-swc";
+import UnoCSS from "unocss/vite";
+import { defineConfig } from "vite";
 
 export default defineConfig({
 	plugins: [UnoCSS(), TanStackRouterVite(), react()],

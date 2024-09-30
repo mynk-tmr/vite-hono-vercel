@@ -1,5 +1,5 @@
-@layer primereact {
-	.p-button i {
-		@apply mr-1;
+@layer components {
+	button {
+		@apply py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hocus:bg-blue-500;
 	}
 }

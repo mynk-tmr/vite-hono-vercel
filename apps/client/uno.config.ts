@@ -3,6 +3,7 @@ import {
 	presetIcons,
 	presetUno,
 	transformerDirectives,
+	transformerVariantGroup,
 } from "unocss";
 
 export default defineConfig({
@@ -14,13 +15,19 @@ export default defineConfig({
 			},
 		}),
 	],
-	transformers: [transformerDirectives()],
-	content: {
-		pipeline: {
-			include: [
-				/(.*\/)primereact(.*)\.(c|m)?(js)(x?)$/, // PrimeReact
-				/\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/, // Default
-			],
-		},
-	},
+	transformers: [transformerDirectives(), transformerVariantGroup()],
+	variants: [
+		(matcher) =>
+			varBuild(matcher, "hocus:", ["hover", "focus-visible", "active"]),
+	],
 });
+
+/* helper functions */
+
+function varBuild(matcher: string, sel: string, arr: string[]) {
+	if (!matcher.startsWith(sel)) return matcher;
+	return {
+		matcher: matcher.slice(sel.length),
+		selector: (s) => arr.map((a) => `${s}:${a}`).join(","),
+	};
+}
